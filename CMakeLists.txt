@@ -32,7 +32,22 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 enable_language(C ASM)
 
 # Create an executable object type
-add_executable(${CMAKE_PROJECT_NAME})
+add_executable(${CMAKE_PROJECT_NAME}
+        Utils/Delay/Delay.c
+        Utils/IIC/I2C.c
+        Utils/Interrupt/Interrupt.c
+        Utils/SPI/SPI.c
+        Utils/USART/USART.c
+        Utils/Timer/Timer.c
+        Libs/AHT20/AHT20.c
+        Libs/BH1750/BH1750.c
+        Libs/BMP280/BMP280.h
+        Libs/GP10/GP10.c
+        Libs/MPU6050/MPU6050.c
+        Libs/OLCD/OLED.c
+        Libs/OLCD/OLED_Data.c
+        Libs/OLCD/OLED_Menu.c
+        Libs/W25Q64/W25Q64.c)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -50,6 +65,19 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+        Utils/IIC
+        Utils/SPI
+        Utils/USART
+        Utils/Interrupt
+        Utils/Timer
+        Utils/Delay
+        Libs/GP10
+        Libs/OLCD
+        Libs/BH1750
+        Libs/AHT20
+        Libs/BMP280
+        Libs/W25Q64
+        Libs/MPU6050
 )
 
 # Add project symbols (macros)
