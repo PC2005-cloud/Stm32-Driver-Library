@@ -58,6 +58,10 @@ add_executable(${CMAKE_PROJECT_NAME}
         Demo/Src/demo.c
         Demo/Src/demo_lcd.c
         Utils/SPI/SPI1.c
+        Libs/TFTLCD/UI/LCD_Box.c
+        Libs/TFTLCD/UI/LCD_Box.h
+        Libs/TFTLCD/UI/LCD_Draw.c
+        Libs/TFTLCD/UI/LCD_Draw.h
 )
 
 # Add STM32CubeMX generated sources

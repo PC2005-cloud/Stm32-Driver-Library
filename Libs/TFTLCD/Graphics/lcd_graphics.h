@@ -12,10 +12,21 @@
 void LCD_Point(uint16_t x, uint16_t y, uint16_t color);
 // 画矩形
 void LCD_Rectangle(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t color);
+void LCD_RectangleWithRadius(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t radius, uint16_t color);
+// 矩形边框
+void LCD_RectangularBorder(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t width, uint16_t color);
+
+void LCD_RectangularBorderWithRadius(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey, uint16_t width, uint16_t radius, uint16_t color);
+
 // 画线
 void LCD_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
 // 画圆
-void LCD_Circle(uint16_t xc, uint16_t yc, uint16_t c, uint16_t r, bool fill);
+void LCD_Circle(uint16_t xc, uint16_t yc, uint16_t r, uint16_t color);
+void LCD_CircleBorder(uint16_t xc, uint16_t yc, uint16_t r, uint16_t width, uint16_t color);
+// 圆弧
+void LCD_Arc(uint16_t xc, uint16_t yc, uint16_t r, uint16_t color, uint8_t start, uint8_t end);
+void LCD_ArcBorder(uint16_t xc, uint16_t yc, uint16_t r, uint16_t width, uint16_t color,uint8_t start, uint8_t end);
+
 // 画三角形
 void LCD_Triangle(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
 // 填充三角形

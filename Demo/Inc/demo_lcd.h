@@ -5,6 +5,6 @@
 #ifndef STM32_DRIVER_LIBRARY_DEMO_LCD_H
 #define STM32_DRIVER_LIBRARY_DEMO_LCD_H
 
-void demo_lcd(int n);
+void demo_lcd();
 
 #endif //STM32_DRIVER_LIBRARY_DEMO_LCD_H
