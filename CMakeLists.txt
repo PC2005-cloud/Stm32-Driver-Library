@@ -47,7 +47,18 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/OLCD/OLED.c
         Libs/OLCD/OLED_Data.c
         Libs/OLCD/OLED_Menu.c
-        Libs/W25Q64/W25Q64.c)
+        Libs/W25Q64/W25Q64.c
+
+        Libs/TFTLCD/Graphics/font.c
+        Libs/TFTLCD/Driver/lcd_dma.c
+        Libs/TFTLCD/Graphics/lcd_str.c
+        Libs/TFTLCD/Graphics/lcd_graphics.c
+        Libs/TFTLCD/Driver/lcd_cmd.c
+        Libs/TFTLCD/Driver/lcd_gpio.c
+        Demo/Src/demo.c
+        Demo/Src/demo_lcd.c
+        Utils/SPI/SPI1.c
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -65,6 +76,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+        Demo/Inc
         Utils/IIC
         Utils/SPI
         Utils/USART
@@ -78,6 +90,9 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Libs/BMP280
         Libs/W25Q64
         Libs/MPU6050
+        Libs/TFTLCD/Driver
+        Libs/TFTLCD/Graphics
+        Libs/TFTLCD/UI
 )
 
 # Add project symbols (macros)

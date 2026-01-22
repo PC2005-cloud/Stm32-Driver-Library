@@ -1,56 +1,42 @@
-#include "main.h"
+
 #include "Delay.h"
 
-
-static uint32_t fac_us = 0;  // 微秒延时倍乘数
-
 /**
-  * @brief  初始化延时函数
-  * @param  无
+  * @brief  微秒级延时
+  * @param  xus 延时时长，范围：0~233015
   * @retval 无
   */
-void Delay_Init(void)
+void Delay_us(uint32_t xus)
 {
-    // SystemCoreClock在system_stm32f1xx.c中定义
-    fac_us = SystemCoreClock / 8000000;  // 72MHz时，fac_us=9
+    SysTick->LOAD = 72 * xus;				//设置定时器重装值
+    SysTick->VAL = 0x00;					//清空当前计数值
+    SysTick->CTRL = 0x00000005;				//设置时钟源为HCLK，启动定时器
+    while(!(SysTick->CTRL & 0x00010000));	//等待计数到0
+    SysTick->CTRL = 0x00000004;				//关闭定时器
 }
 
 /**
-  * @brief  微秒级延时（基于SysTick）
-  * @param  nus 延时时长
+  * @brief  毫秒级延时
+  * @param  xms 延时时长，范围：0~4294967295
   * @retval 无
   */
-void Delay_us(uint16_t nus)
+void Delay_ms(uint32_t xms)
 {
-    uint32_t ticks;
-    uint32_t told, tnow, tcnt = 0;
-    uint32_t reload = SysTick->LOAD;
-
-    ticks = nus * fac_us;
-    told = SysTick->VAL;
-
-    while(1)
+    while(xms--)
     {
-        tnow = SysTick->VAL;
-        if(tnow != told)
-        {
-            if(tnow < told)
-                tcnt += told - tnow;
-            else
-                tcnt += reload - tnow + told;
-            told = tnow;
-            if(tcnt >= ticks) break;
-        }
+        Delay_us(1000);
     }
 }
 
 /**
-  * @brief  毫秒级延时（基于SysTick）
-  * @param  nms 延时时长
+  * @brief  秒级延时
+  * @param  xs 延时时长，范围：0~4294967295
   * @retval 无
   */
-  void Delay_ms(uint16_t nms) {
-      while(nms--) {
-          Delay_us(1000);
-      }
-  }
+void Delay_s(uint32_t xs)
+{
+    while(xs--)
+    {
+        Delay_ms(1000);
+    }
+}
