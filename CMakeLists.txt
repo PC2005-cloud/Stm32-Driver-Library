@@ -62,6 +62,9 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/TFTLCD/UI/LCD_Box.h
         Libs/TFTLCD/UI/LCD_Draw.c
         Libs/TFTLCD/UI/LCD_Draw.h
+        Libs/WS2812/WS2812.c
+        Demo/Src/demo_ws2812.c
+        Demo/Inc/demo_ws2812.h
 )
 
 # Add STM32CubeMX generated sources
@@ -97,6 +100,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Libs/TFTLCD/Driver
         Libs/TFTLCD/Graphics
         Libs/TFTLCD/UI
+        Libs/WS2812
 )
 
 # Add project symbols (macros)

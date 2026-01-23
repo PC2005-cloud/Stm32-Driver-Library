@@ -4,7 +4,8 @@
 
 #include "demo.h"
 #include "demo_lcd.h"
+#include "demo_ws2812.h"
 
 void demo() {
-    demo_lcd();
+    demo_ws2812();
 }

@@ -5,6 +5,6 @@ Preset CMake variables:
   CMAKE_TOOLCHAIN_FILE:FILEPATH="D:/Projects/C_word/Stm32-Driver-Library/cmake/gcc-arm-none-eabi.cmake"
 
 Build type: Debug
--- Configuring done (0.3s)
--- Generating done (0.1s)
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
 -- Build files have been written to: D:/Projects/C_word/Stm32-Driver-Library/build/Debug

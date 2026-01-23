@@ -32,19 +32,19 @@ void LCD_GPIOInit(void) {
 }
 
 void LCD_Close() {
-    HAL_GPIO_WritePin(LCD_Port, LCD_BLK_Pin, (GPIO_PinState) 0);
+    LCD_Port->BRR = LCD_BLK_Pin;  // 直接复位寄存器，更快
 }
 
 void LCD_Open() {
-    HAL_GPIO_WritePin(LCD_Port, LCD_BLK_Pin, (GPIO_PinState) 1);
+    LCD_Port->BSRR = LCD_BLK_Pin;  // 置位寄存器
 }
 
 void LCD_DataMode() {
-    HAL_GPIO_WritePin(LCD_Port, LCD_DC_Pin, (GPIO_PinState) 1);
+    LCD_Port->BSRR = LCD_DC_Pin;  // DC=1
 }
 
 void LCD_CmdMode() {
-    HAL_GPIO_WritePin(LCD_Port, LCD_DC_Pin, (GPIO_PinState) 0);
+    LCD_Port->BRR = LCD_DC_Pin;  // DC=0
 }
 
 void LCD_RESET(void) {

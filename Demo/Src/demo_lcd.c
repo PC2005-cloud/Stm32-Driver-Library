@@ -11,7 +11,7 @@
 #include "LCD_Draw.h"
 #include "OLED.h"
 
-void demo01() {
+static void demo01() {
 
     LCD_ShowChar(0, 0, 'A', 0x1234, LCD1608);
 
@@ -22,7 +22,7 @@ void demo01() {
 
 }
 
-void demo02() {
+static void demo02() {
     LCD_Rectangle(100, 100, 200, 200, 0x1234);
     LCD_RectangleWithRadius(20, 20, 80, 80, 20, 0x1234);
     LCD_RectangularBorder(200, 200, 250, 250, 5, 0x1234);
@@ -37,7 +37,7 @@ void demo02() {
     LCD_Fill_Triangle(10, 320, 40, 280, 200, 319, 0x07FB);
 }
 
-void demo03() {
+static void demo03() {
     LCD_ShowChar(0, 0, 'A', 0x1234, LCD1608);
     LCD_ShowString(0, 20, "Hello World", 0x1234, LCD1608);
     LCD_ShowNum(220, 280, 123456789, 10, 0x0000, LCD1608);
@@ -45,7 +45,7 @@ void demo03() {
 
 
 
-void demo04() {
+static void demo04() {
     LCD_Clear(0x0000);
     LCD_Clear(0xFFFF);
     LCD_Clear(0x1234);
@@ -61,7 +61,7 @@ void demo04() {
 
 }
 
-void demo05() {
+static void demo05() {
     uint16_t x = 0;
     while (1) {
         LCD_Box box = {1, 20 + x, 20, 100, 100, 4, 0xCCCC, 0x000, 5, 10};

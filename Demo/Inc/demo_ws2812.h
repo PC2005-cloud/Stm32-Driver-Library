@@ -1,0 +1,9 @@
+//
+// Created by pc on 2026/1/23.
+//
+
+#ifndef STM32_DRIVER_LIBRARY_DEMO_WS2812_H
+#define STM32_DRIVER_LIBRARY_DEMO_WS2812_H
+void demo_ws2812();
+
+#endif //STM32_DRIVER_LIBRARY_DEMO_WS2812_H
