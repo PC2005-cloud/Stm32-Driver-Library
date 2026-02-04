@@ -65,6 +65,10 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/WS2812/WS2812.c
         Demo/Src/demo_ws2812.c
         Demo/Inc/demo_ws2812.h
+        Utils/Timer/PWM.c
+        Utils/Timer/PWM.h
+        Demo/Src/demo_servo.c
+        Demo/Inc/demo_servo.h
 )
 
 # Add STM32CubeMX generated sources
