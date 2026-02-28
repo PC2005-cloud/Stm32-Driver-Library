@@ -69,6 +69,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         Utils/Timer/PWM.h
         Demo/Src/demo_servo.c
         Demo/Inc/demo_servo.h
+        Libs/Servo/servo.c
+        Libs/Servo/servo.h
 )
 
 # Add STM32CubeMX generated sources
@@ -105,6 +107,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Libs/TFTLCD/Graphics
         Libs/TFTLCD/UI
         Libs/WS2812
+        Libs/Servo
 )
 
 # Add project symbols (macros)
