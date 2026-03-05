@@ -7,13 +7,14 @@
 
 #include "PWM.h"
 
+
 void Servo_Init(TIM_TypeDef *tim);
 
 // 360度舵机移动
-void Servo360_Move(TIM_TypeDef *tim, uint32_t channel, int8_t speed);
+void Servo360_Move(enum PWMPin ePin, int8_t speed);
 
 // 180度舵机转动角度
-void Servo180_Move(TIM_TypeDef *tim, uint32_t channel, int8_t degree);
+void Servo180_Move(enum PWMPin ePin, uint8_t degree);
 
 #endif //STM32_DRIVER_LIBRARY_SERVO_H
 

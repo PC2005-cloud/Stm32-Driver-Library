@@ -6,9 +6,10 @@
 #include "servo.h"
 
 void demo_servo01() {
-    PWM_TIM2_Init(7200, 200);
-    PWM_TIM3_Init(7200, 200);
-    PWM_TIM4_Init(7200, 200);
+
+    PWM_Init_TIM(TIM2, 7200, 200);
+    PWM_Init_TIM(TIM3, 7200, 200);
+    PWM_Init_TIM(TIM4, 7200, 200);
 
 
     uint32_t i = 0;
@@ -28,30 +29,30 @@ void demo_servo01() {
 
         uint32_t servo_pwm = 5 + (i * 20 / 200);  // 线性映射
 
-        PWM_Set_COMPARE(TIM2, TIM_CHANNEL_1, servo_pwm);
-        PWM_Set_COMPARE(TIM3, TIM_CHANNEL_1, servo_pwm);
-        PWM_Set_COMPARE(TIM4, TIM_CHANNEL_1, servo_pwm);
+        PWM_Set_COMPARE(PWM_A0, servo_pwm);
+        PWM_Set_COMPARE(PWM_A1, servo_pwm);
+        PWM_Set_COMPARE(PWM_A2, servo_pwm);
 
-        PWM_Set_COMPARE(TIM2, TIM_CHANNEL_2, servo_pwm);
-        PWM_Set_COMPARE(TIM3, TIM_CHANNEL_2, servo_pwm);
-        PWM_Set_COMPARE(TIM4, TIM_CHANNEL_2, servo_pwm);
+        PWM_Set_COMPARE(PWM_A3, servo_pwm);
+        PWM_Set_COMPARE(PWM_A6, servo_pwm);
+        PWM_Set_COMPARE(PWM_A7, servo_pwm);
 
-        PWM_Set_COMPARE(TIM2, TIM_CHANNEL_3, servo_pwm);
-        PWM_Set_COMPARE(TIM3, TIM_CHANNEL_3, servo_pwm);
-        PWM_Set_COMPARE(TIM4, TIM_CHANNEL_3, servo_pwm);
+        PWM_Set_COMPARE(PWM_B6, servo_pwm);
+        PWM_Set_COMPARE(PWM_B7, servo_pwm);
+        PWM_Set_COMPARE(PWM_B8, servo_pwm);
 
-        PWM_Set_COMPARE(TIM2, TIM_CHANNEL_4, servo_pwm);
-        PWM_Set_COMPARE(TIM3, TIM_CHANNEL_4, servo_pwm);
-        PWM_Set_COMPARE(TIM4, TIM_CHANNEL_4, servo_pwm);
-        HAL_Delay(20);
+        PWM_Set_COMPARE(PWM_B9, servo_pwm);
+        PWM_Set_COMPARE(PWM_B0, servo_pwm);
+        PWM_Set_COMPARE(PWM_B1, servo_pwm);
+
     }
 }
 
 void demo_servo02() {
-    PWM_TIM2_Init(7200, 200);
+    PWM_Init_TIM(TIM2, 7200, 200);
 
 
-    PWM_Set_COMPARE(TIM2, TIM_CHANNEL_1, 10);
+    PWM_Set_COMPARE(PWM_A0, 10);
 
     HAL_Delay(20);
 
@@ -65,7 +66,7 @@ void demo_servo03() {
     int8_t flag = 1;
 
     while (1) {
-        Servo360_Move(TIM2, TIM_CHANNEL_1, speed);
+        Servo360_Move(PWM_A0, speed);
 
         if (flag) {
             speed = step;      // 正数: 1, 2, 3, 4...
@@ -87,7 +88,21 @@ void demo_servo03() {
 
 }
 
+void demo_servo04() {
+    Servo_Init(TIM2);
+    while (1) {
+        Servo180_Move(PWM_A0, 180);
+
+
+        HAL_Delay(1000);
+        Servo180_Move(PWM_A0, 90);
+
+        HAL_Delay(1000);
+    }
+
+}
+
 void demo_servo() {
-    demo_servo03();
+    demo_servo01();
 
 }
