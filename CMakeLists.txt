@@ -69,8 +69,10 @@ add_executable(${CMAKE_PROJECT_NAME}
         Utils/Timer/PWM.h
         Demo/Src/demo_servo.c
         Demo/Inc/demo_servo.h
-        Libs/Servo/servo.c
-        Libs/Servo/servo.h
+        Libs/Servo/Servo.c
+        Libs/Servo/Servo.h
+        Libs/Servo/Spider4.c
+        Libs/Servo/Spider4.h
 )
 
 # Add STM32CubeMX generated sources

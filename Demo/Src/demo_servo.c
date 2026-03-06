@@ -3,7 +3,8 @@
 //
 
 #include "demo_servo.h"
-#include "servo.h"
+#include "Servo.h"
+#include "Spider4.h"
 
 void demo_servo01() {
 
@@ -90,19 +91,46 @@ void demo_servo03() {
 
 void demo_servo04() {
     Servo_Init(TIM2);
+    Servo_Init(TIM3);
     while (1) {
-        Servo180_Move(PWM_A0, 180);
-
-
+        Servo180_Move(PWM_A0, 75);
+        Servo180_Move(PWM_A1, 75);
+        Servo180_Move(PWM_A2, 75);
+        Servo180_Move(PWM_A3, 75);
+        Servo180_Move(PWM_A6, 75);
+        Servo180_Move(PWM_A7, 75);
+        Servo180_Move(PWM_B6, 75);
+        Servo180_Move(PWM_B7, 75);
         HAL_Delay(1000);
-        Servo180_Move(PWM_A0, 90);
-
+        Servo180_Move(PWM_A0, 105);
+        Servo180_Move(PWM_A1, 105);
+        Servo180_Move(PWM_A2, 105);
+        Servo180_Move(PWM_A3, 105);
+        Servo180_Move(PWM_A6, 105);
+        Servo180_Move(PWM_A7, 105);
+        Servo180_Move(PWM_B6, 105);
+        Servo180_Move(PWM_B7, 105);
         HAL_Delay(1000);
+
+    }
+
+}
+
+void demo_servo05() {
+    Spider4_Init();
+    while (1) {
+        Spider4_FootAll(30);
+        Spider4_LegAll(45);
+        HAL_Delay(5000);
+
+        Spider4_FootAll(0);
+        Spider4_LegAll(90);
+        HAL_Delay(5000);
     }
 
 }
 
 void demo_servo() {
-    demo_servo01();
+    demo_servo04();
 
 }

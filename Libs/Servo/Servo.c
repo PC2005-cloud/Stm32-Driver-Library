@@ -4,13 +4,13 @@
 
 
 
-#include "servo.h"
+#include "Servo.h"
 
 #define prescaler 7200
 #define period 200
 
 void Servo_Init(TIM_TypeDef *tim) {
-    PWM_Init_TIM(TIM2, prescaler, period);
+    PWM_Init_TIM(tim, prescaler, period);
 }
 
 // 360度舵机移动
