@@ -73,6 +73,10 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/Servo/Servo.h
         Libs/Servo/Spider4.c
         Libs/Servo/Spider4.h
+        Demo/Src/demo_sd.c
+        Demo/Inc/demo_sd.h
+        Libs/SD/SD.c
+        Libs/SD/SD.h
 )
 
 # Add STM32CubeMX generated sources
@@ -110,6 +114,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Libs/TFTLCD/UI
         Libs/WS2812
         Libs/Servo
+        Libs/SD
 )
 
 # Add project symbols (macros)
