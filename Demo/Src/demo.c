@@ -3,7 +3,8 @@
 //
 
 #include "demo_sd.h"
+#include "demo_servo.h"
 
 void demo() {
-    demo_sd();
+    demo_servo();
 }

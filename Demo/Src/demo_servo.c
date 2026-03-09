@@ -5,6 +5,7 @@
 #include "demo_servo.h"
 #include "Servo.h"
 #include "Spider4.h"
+#include "Dog.h"
 
 void demo_servo01() {
 
@@ -130,7 +131,16 @@ void demo_servo05() {
 
 }
 
+void demo_servo06() {
+    Dog_Init();
+
+    Dog_Turn(50000, 250, -30);
+
+
+}
+
+
 void demo_servo() {
-    demo_servo04();
+    demo_servo06();
 
 }
