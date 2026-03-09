@@ -79,6 +79,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/SD/SD.h
         Libs/Servo/Dog.c
         Libs/Servo/Dog.h
+        Demo/Src/Demo_time.c
+        Demo/Inc/Demo_time.h
 )
 
 # Add STM32CubeMX generated sources
