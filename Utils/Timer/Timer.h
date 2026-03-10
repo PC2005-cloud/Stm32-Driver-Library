@@ -24,7 +24,7 @@ struct Timer_Config *Timer_GetConfig(TIM_TypeDef *tim);
 void Timer_Start(TIM_TypeDef *tim, uint16_t n);
 
 // 获取计时器值
-uint16_t Timer_Get_Value(TIM_TypeDef *tim);
+uint16_t Timer_GetValue(TIM_TypeDef *tim);
 
 // 暂停计时器
 void Timer_Pause(TIM_TypeDef *tim);

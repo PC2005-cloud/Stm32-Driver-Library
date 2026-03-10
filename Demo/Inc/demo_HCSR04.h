@@ -1,0 +1,10 @@
+//
+// Created by pc on 2026/3/10.
+//
+
+#ifndef STM32_DRIVER_LIBRARY_DEMO_HCSR04_H
+#define STM32_DRIVER_LIBRARY_DEMO_HCSR04_H
+
+void demo_HCSR04();
+
+#endif //STM32_DRIVER_LIBRARY_DEMO_HCSR04_H

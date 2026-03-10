@@ -4,8 +4,8 @@
 
 #include "demo_sd.h"
 #include "demo_servo.h"
-#include "Demo_time.h"
+#include "demo_HCSR04.h"
 
 void demo() {
-    demo_time();
+    demo_HCSR04();
 }

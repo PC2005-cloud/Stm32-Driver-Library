@@ -72,7 +72,7 @@ void Timer_Start(TIM_TypeDef *tim, uint16_t n) {
 }
 
 // 获取计时器值
-uint16_t Timer_Get_Value(TIM_TypeDef *tim) {
+uint16_t Timer_GetValue(TIM_TypeDef *tim) {
     TIM_HandleTypeDef *htim = Timer_GetConfig(tim)->htim;
     return __HAL_TIM_GET_COUNTER(htim);
 }

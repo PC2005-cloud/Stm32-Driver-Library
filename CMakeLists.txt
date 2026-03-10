@@ -79,8 +79,14 @@ add_executable(${CMAKE_PROJECT_NAME}
         Libs/SD/SD.h
         Libs/Servo/Dog.c
         Libs/Servo/Dog.h
-        Demo/Src/Demo_time.c
-        Demo/Inc/Demo_time.h
+        Demo/Src/demo_time.c
+        Demo/Inc/demo_time.h
+        Demo/Src/demo_HCSR04.c
+        Demo/Inc/demo_HCSR04.h
+        Utils/GPIO/BSP_GPIO.c
+        Utils/GPIO/BSP_GPIO.h
+        Libs/HCSR04/HCSR04.c
+        Libs/HCSR04/HCSR04.h
 )
 
 # Add STM32CubeMX generated sources
@@ -106,6 +112,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Utils/Interrupt
         Utils/Timer
         Utils/Delay
+        Utils/GPIO
         Libs/GP10
         Libs/OLCD
         Libs/BH1750
@@ -119,6 +126,7 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
         Libs/WS2812
         Libs/Servo
         Libs/SD
+        Libs/HCSR04
 )
 
 # Add project symbols (macros)
