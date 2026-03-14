@@ -15,6 +15,12 @@
 #define OLED_UNFILLED			0
 #define OLED_FILLED				1
 
+// OLED规格
+#define OLED_096 1 // 0.96寸
+#define OLED_130 2 // 1.3寸
+
+#define OLED_SPECIFIC OLED_096
+
 /*********************参数宏定义*/
 
 extern uint8_t OLED_DisplayBuf[8][128];

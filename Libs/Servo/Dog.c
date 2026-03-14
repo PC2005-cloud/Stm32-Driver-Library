@@ -48,11 +48,11 @@ void Dog_MovePace(uint8_t  degree) {
     Dog_BackwardSync( 180 - degree);
 }
 
-void Dog_TailMove(uint8_t  from, uint8_t  to, uint32_t delay_ms) {
-    Servo180_Move(Dog_Tail, from);
-    HAL_Delay(delay_ms);
-    Servo180_Move(Dog_Tail, to);
-    HAL_Delay(delay_ms);
+
+
+void Dog_TailMove(uint8_t  degree) {
+    Servo180_Move(Dog_Tail, degree);
+
 }
 
 

@@ -32,6 +32,13 @@ extern const ChineseCell_t OLED_CF16x16[];
 
 /*图像数据声明*/
 extern const uint8_t Diode[];
+extern const uint8_t Face_eyes[];
+extern const uint8_t Face_happy[];
+extern const uint8_t Face_mania[];
+extern const uint8_t Face_sleep[];
+extern const uint8_t Face_stare[];
+extern const uint8_t Face_very_happy[];
+extern const uint8_t Face_hello[];
 /*按照上面的格式，在这个位置加入新的图像数据声明*/
 //...
 

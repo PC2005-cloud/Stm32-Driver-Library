@@ -87,6 +87,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         Utils/GPIO/BSP_GPIO.h
         Libs/HCSR04/HCSR04.c
         Libs/HCSR04/HCSR04.h
+        Demo/Src/demo_oled.c
+        Demo/Inc/demo_oled.h
 )
 
 # Add STM32CubeMX generated sources

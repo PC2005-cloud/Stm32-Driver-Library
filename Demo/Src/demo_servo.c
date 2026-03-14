@@ -6,6 +6,7 @@
 #include "Servo.h"
 #include "Spider4.h"
 #include "Dog.h"
+#include "OLED.h"
 
 void demo_servo01() {
 
@@ -133,8 +134,15 @@ void demo_servo05() {
 
 void demo_servo06() {
     Dog_Init();
-
-    Dog_Turn(50000, 250, -30);
+    OLED_Init();
+    OLED_ShowImage(0, 0, 128, 64, Face_very_happy);
+    OLED_Update();
+    while (1) {
+//        Dog_TailMove(45);
+        Dog_Walk(1, 250, 30);
+//        Dog_TailMove(135);
+        Dog_Walk(1, 250, 30);
+    }
 
 
 }
